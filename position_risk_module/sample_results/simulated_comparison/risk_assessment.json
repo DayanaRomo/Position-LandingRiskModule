@@ -1,0 +1,158 @@
+{
+  "generated_utc": "2026-11-17T18:32:42+00:00",
+  "risk": {
+    "id": "R2",
+    "name": "Indoor localization",
+    "chance": "Medium",
+    "impact": "High",
+    "owner": "Dayana",
+    "response": "Prevent: prototype onboard sensing early and measure position error",
+    "warning_signal": "Bench position error above 10 cm",
+    "if_fails": "Add markers or a second sensor and retest"
+  },
+  "assessments": [
+    {
+      "label": "baseline",
+      "source": "simulated",
+      "passed": false,
+      "risk_status": {
+        "risk": "R2 Indoor localization",
+        "chance": "Medium",
+        "impact": "High",
+        "owner": "Dayana",
+        "status": "WARNING SIGNAL TRIPPED (simulated)",
+        "action": "Add markers or a second sensor and retest. Tell the team immediately (plan slide 3)."
+      },
+      "worst_err_m": 0.19215781949845587,
+      "mean_err_m": 0.04918840728902139,
+      "p95_err_m": 0.0873466373537728,
+      "n_readings": 500,
+      "n_points": 25,
+      "n_exceed": 9,
+      "exceed_upper_95": 0.030687175093787395,
+      "failing_points": [
+        2,
+        14,
+        15,
+        16,
+        19,
+        21,
+        25
+      ],
+      "checks": [
+        {
+          "name": "Worst-case error at every grid point",
+          "value": 0.19215781949845587,
+          "op": "<=",
+          "limit": 0.1,
+          "passed": false
+        },
+        {
+          "name": "Readings at the least-sampled point",
+          "value": 20,
+          "op": ">=",
+          "limit": 20,
+          "passed": true
+        },
+        {
+          "name": "Grid points tested",
+          "value": 25,
+          "op": ">=",
+          "limit": 9,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "label": "second_sensor",
+      "source": "simulated",
+      "passed": false,
+      "risk_status": {
+        "risk": "R2 Indoor localization",
+        "chance": "Medium",
+        "impact": "High",
+        "owner": "Dayana",
+        "status": "WARNING SIGNAL TRIPPED (simulated)",
+        "action": "Add markers or a second sensor and retest. Tell the team immediately (plan slide 3)."
+      },
+      "worst_err_m": 0.13328535979453005,
+      "mean_err_m": 0.024956431932351395,
+      "p95_err_m": 0.052631978523277397,
+      "n_readings": 500,
+      "n_points": 25,
+      "n_exceed": 2,
+      "exceed_upper_95": 0.012014670678608508,
+      "failing_points": [
+        4,
+        25
+      ],
+      "checks": [
+        {
+          "name": "Worst-case error at every grid point",
+          "value": 0.13328535979453005,
+          "op": "<=",
+          "limit": 0.1,
+          "passed": false
+        },
+        {
+          "name": "Readings at the least-sampled point",
+          "value": 20,
+          "op": ">=",
+          "limit": 20,
+          "passed": true
+        },
+        {
+          "name": "Grid points tested",
+          "value": 25,
+          "op": ">=",
+          "limit": 9,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "label": "markers",
+      "source": "simulated",
+      "passed": true,
+      "risk_status": {
+        "risk": "R2 Indoor localization",
+        "chance": "Medium",
+        "impact": "High",
+        "owner": "Dayana",
+        "status": "Warning signal clear (simulated)",
+        "action": "Keep this sensor setup. Repeat the test on the real sensor and bench grid."
+      },
+      "worst_err_m": 0.043656145333980045,
+      "mean_err_m": 0.01238809108191473,
+      "p95_err_m": 0.024140932508220213,
+      "n_readings": 500,
+      "n_points": 25,
+      "n_exceed": 0,
+      "exceed_upper_95": 0.005382266466195317,
+      "failing_points": [],
+      "checks": [
+        {
+          "name": "Worst-case error at every grid point",
+          "value": 0.043656145333980045,
+          "op": "<=",
+          "limit": 0.1,
+          "passed": true
+        },
+        {
+          "name": "Readings at the least-sampled point",
+          "value": 20,
+          "op": ">=",
+          "limit": 20,
+          "passed": true
+        },
+        {
+          "name": "Grid points tested",
+          "value": 25,
+          "op": ">=",
+          "limit": 9,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

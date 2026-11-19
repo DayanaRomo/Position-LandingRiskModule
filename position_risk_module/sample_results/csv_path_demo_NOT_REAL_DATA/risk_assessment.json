@@ -1,0 +1,59 @@
+{
+  "generated_utc": "2026-11-17T18:32:43+00:00",
+  "risk": {
+    "id": "R2",
+    "name": "Indoor localization",
+    "chance": "Medium",
+    "impact": "High",
+    "owner": "Dayana",
+    "response": "Prevent: prototype onboard sensing early and measure position error",
+    "warning_signal": "Bench position error above 10 cm",
+    "if_fails": "Add markers or a second sensor and retest"
+  },
+  "assessments": [
+    {
+      "label": "demo_input_NOT_REAL_DATA",
+      "source": "csv",
+      "passed": true,
+      "risk_status": {
+        "risk": "R2 Indoor localization",
+        "chance": "Medium",
+        "impact": "High",
+        "owner": "Dayana",
+        "status": "Warning signal clear",
+        "action": "R2 is reduced for this setup. Repeat if the sensor, lighting, or mounting changes."
+      },
+      "worst_err_m": 0.03312769536203807,
+      "mean_err_m": 0.01274107815538497,
+      "p95_err_m": 0.023820009616449835,
+      "n_readings": 500,
+      "n_points": 25,
+      "n_exceed": 0,
+      "exceed_upper_95": 0.005382266466195317,
+      "failing_points": [],
+      "checks": [
+        {
+          "name": "Worst-case error at every grid point",
+          "value": 0.03312769536203807,
+          "op": "<=",
+          "limit": 0.1,
+          "passed": true
+        },
+        {
+          "name": "Readings at the least-sampled point",
+          "value": 20,
+          "op": ">=",
+          "limit": 20,
+          "passed": true
+        },
+        {
+          "name": "Grid points tested",
+          "value": 25,
+          "op": ">=",
+          "limit": 9,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}
